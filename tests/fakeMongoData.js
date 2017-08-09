@@ -15,5 +15,8 @@ mongoose.connection.once('open', function () {
       username: 'TwoOClockAm',
       payload: message
     })
+      .catch(function (err) {
+        console.log(err)
+      })
   }
 })

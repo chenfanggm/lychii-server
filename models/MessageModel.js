@@ -1,26 +1,21 @@
-var mongoose = require('mongoose')
-var moment = require('moment')
+const mongoose = require('mongoose')
+const moment = require('moment')
 
-/**
- * Define
- */
-var STATUS = {
+
+const STATUS = {
     INACTIVE: 0,
     ACTIVE: 1
 }
 
-/**
- * Schema
- */
-var MessageSchema = new mongoose.Schema({
-    username: { type: String, required: true, unique: true },
+const MessageSchema = new mongoose.Schema({
+    username: { type: String, required: true },
     payload: { type: String, required: true },
     status: { type: Number, required: true, default: STATUS.ACTIVE },
-    createdAt: { type: Date, required: true, default: moment().format('YYYY-MM-DD HH:mm:ss') },
-    updatedAt: { type: Date, required: true, default: moment().format('YYYY-MM-DD HH:mm:ss') }
+    createdAt: { type: Date, required: true, default: moment().format('YYYY-MM-DD HH:mm:ss:SSS') },
+    updatedAt: { type: Date, required: true, default: moment().format('YYYY-MM-DD HH:mm:ss:SSS') }
 })
 
-var MessageModel = mongoose.model('Message', MessageSchema)
+const MessageModel = mongoose.model('Message', MessageSchema)
 MessageModel.STATUS = STATUS
 
 module.exports = MessageModel
