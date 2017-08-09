@@ -31,7 +31,7 @@ var config = {
   // Database Configuration
   // ----------------------------------
   mongo: {
-    uri: process.env.MONGO_URI || 'mongodb://localhost/express_starter'
+    uri: process.env.MONGO_URI || 'mongodb://localhost/lychii'
   },
   // ----------------------------------
   // JWT Configuration
